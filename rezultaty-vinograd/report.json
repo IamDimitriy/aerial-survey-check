@@ -1,0 +1,248 @@
+{
+  "requirements": [
+    {
+      "id": "crs",
+      "page": 1,
+      "section": "7",
+      "scope": "all",
+      "value": "WGS-84",
+      "confirmation": "candidate; specialist confirmation pending"
+    },
+    {
+      "id": "format",
+      "page": 2,
+      "section": "8 / 2.2",
+      "scope": "orthophoto",
+      "value": "GeoTIFF",
+      "confirmation": "candidate; specialist confirmation pending"
+    },
+    {
+      "id": "pixel_visible",
+      "page": 2,
+      "section": "8 / 2.3",
+      "scope": "visible",
+      "value": 0.05,
+      "confirmation": "candidate; specialist confirmation pending"
+    },
+    {
+      "id": "pixel_spectral",
+      "page": 2,
+      "section": "8 / 2.4",
+      "scope": "spectral",
+      "value": 0.2,
+      "confirmation": "candidate; specialist confirmation pending"
+    },
+    {
+      "id": "channels_spectral",
+      "page": 3,
+      "section": "11",
+      "scope": "spectral",
+      "value": 5,
+      "confirmation": "candidate; specialist confirmation pending"
+    },
+    {
+      "id": "plan_accuracy",
+      "page": 2,
+      "section": "8 / 2.1",
+      "scope": "orthophoto",
+      "value": "specialist",
+      "confirmation": "candidate; specialist confirmation pending"
+    }
+  ],
+  "facts": {
+    "driver": "GTiff",
+    "width": 32768,
+    "height": 28672,
+    "channels": 3,
+    "epsg": 4326,
+    "units": "degree",
+    "pixel_size": [
+      1.8570532226563907e-07,
+      1.857038225097803e-07
+    ],
+    "dtypes": [
+      "uint8",
+      "uint8",
+      "uint8"
+    ],
+    "read_windows": [
+      {
+        "x": 0,
+        "y": 0,
+        "shape": [
+          3,
+          32,
+          32
+        ]
+      },
+      {
+        "x": 16384,
+        "y": 0,
+        "shape": [
+          3,
+          32,
+          32
+        ]
+      },
+      {
+        "x": 32736,
+        "y": 0,
+        "shape": [
+          3,
+          32,
+          32
+        ]
+      },
+      {
+        "x": 0,
+        "y": 14336,
+        "shape": [
+          3,
+          32,
+          32
+        ]
+      },
+      {
+        "x": 16384,
+        "y": 14336,
+        "shape": [
+          3,
+          32,
+          32
+        ]
+      },
+      {
+        "x": 32736,
+        "y": 14336,
+        "shape": [
+          3,
+          32,
+          32
+        ]
+      },
+      {
+        "x": 0,
+        "y": 28640,
+        "shape": [
+          3,
+          32,
+          32
+        ]
+      },
+      {
+        "x": 16384,
+        "y": 28640,
+        "shape": [
+          3,
+          32,
+          32
+        ]
+      },
+      {
+        "x": 32736,
+        "y": 28640,
+        "shape": [
+          3,
+          32,
+          32
+        ]
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "format",
+      "status": "pass",
+      "detail": "GTiff + CRS"
+    },
+    {
+      "id": "crs",
+      "status": "pass",
+      "detail": "EPSG:4326; target WGS-84 / EPSG:4326"
+    },
+    {
+      "id": "pixel_visible",
+      "status": "manual",
+      "detail": "Пиксель в градусах: прямое сравнение с 0.05 м запрещено"
+    },
+    {
+      "id": "channels_spectral",
+      "status": "not_applicable",
+      "detail": "Образец назначен видимому ортофото, правило пяти каналов относится к спектрозональному"
+    },
+    {
+      "id": "plan_accuracy",
+      "status": "manual",
+      "detail": "Нужны контрольные точки и специалист; заголовок TIFF не подтверждает СКО"
+    }
+  ],
+  "inventory": [
+    {
+      "role": "visible",
+      "file": "oam-uav.tif",
+      "status": "present"
+    },
+    {
+      "role": "spectral",
+      "file": null,
+      "status": "missing_in_demo_package"
+    },
+    {
+      "role": "height_map",
+      "file": null,
+      "status": "missing_in_demo_package"
+    },
+    {
+      "role": "field_shp",
+      "file": null,
+      "status": "missing_in_demo_package"
+    },
+    {
+      "role": "ndvi",
+      "file": null,
+      "status": "missing_in_demo_package"
+    },
+    {
+      "role": "vineyard_kml",
+      "file": null,
+      "status": "missing_in_demo_package"
+    },
+    {
+      "role": "area_report_xls",
+      "file": null,
+      "status": "missing_in_demo_package"
+    },
+    {
+      "role": "pdtk_conclusion",
+      "file": null,
+      "status": "missing_in_demo_package"
+    },
+    {
+      "role": "work_report",
+      "file": null,
+      "status": "missing_in_demo_package"
+    }
+  ],
+  "manifest": {
+    "sample_role": "visible orthophoto; assigned for this example by Codex",
+    "relation_to_tz": "Independent public UAV sample, not delivery for this contract",
+    "author": "Santiago Pastor",
+    "license": "CC BY 4.0",
+    "provider": "OpenAerialMap / Open Imagery Network",
+    "urls": [
+      "https://rvwa.ru/images/07e7/04/0c/514017.pdf",
+      "https://api.openaerialmap.org/meta/59e62b863d6412ef72209ae1",
+      "https://oin-hotosm-temp.s3.amazonaws.com/573a17d4cd0663bb003c32b6/0/575fcf142b67227a79b4fbfd.tif"
+    ],
+    "files": {
+      "tz-vinograd-2023.pdf": {
+        "bytes": 45354,
+        "sha256": "b60c1bda970bad3bd2b7b04bdc148774b0d3031bdae69193e759b6688d1f280e"
+      },
+      "oam-uav.tif": {
+        "bytes": 47649982,
+        "sha256": "a91d84a394471c952979b82562ad06debecc544565fa92e5197e8d92cb9a48d8"
+      }
+    }
+  }
+}
